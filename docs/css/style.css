@@ -237,6 +237,7 @@ hr {
 }
 .servises__item {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   flex: 0 1 50%;
   margin: 0 0 80px 0;
