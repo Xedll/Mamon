@@ -166,9 +166,13 @@ hr {
   font-weight: bold;
   color: #202020;
   white-space: nowrap;
+  transition: all 0.2s;
 }
 .nav__item:hover {
   text-decoration: underline;
+}
+.nav__item:active {
+  transform: scale(0.95);
 }
 
 .page {
@@ -210,6 +214,7 @@ hr {
   font-size: 24px;
   line-height: 29px;
   color: #FFFFFF;
+  transition: all 0.2s;
   padding: 13px 52px 14px;
   background: #5528FF;
   border-radius: 10px;
@@ -217,6 +222,9 @@ hr {
 }
 .main__button:hover {
   text-decoration: underline;
+}
+.main__button:active {
+  transform: scale(0.95);
 }
 
 .servises__content {
@@ -291,7 +299,28 @@ hr {
   padding: 0 10px;
   background: #fff;
 }
+.clients__slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.sliderClients button {
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1);
+  padding: 20px 50px;
+  border-radius: 10px;
+  margin: 10px;
+  transition: all 0.2s;
+}
+.sliderClients button:active {
+  transform: scale(0.95);
+}
+.sliderClients__buttons {
+  margin-top: -80px;
+}
+.sliderClients__content {
+  min-height: 150px;
+}
 .team__title {
   position: absolute;
   margin: -8px 0 0 0;
@@ -318,28 +347,49 @@ hr {
   justify-content: center;
 }
 
-.item__img {
+.item__img, .slider__img {
   padding: 0 30px 0 0;
 }
-.item__content {
+.item__content, .slider__content {
+  white-space: nowrap;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.item__content > :not(last-child) {
+.item__content > :not(last-child), .slider__content > :not(last-child) {
   margin: 0 0 10px 0;
 }
-.item__title {
+.item__title, .slider__title {
   font-size: 28px;
   line-height: 33px;
   color: #202020;
 }
-.item__description {
+.item__description, .slider__description {
   line-height: 16px;
   color: #B2B2B2;
 }
-
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.slider button {
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1);
+  padding: 20px 50px;
+  border-radius: 10px;
+  margin: 10px;
+  transition: all 0.2s;
+}
+.slider button:active {
+  transform: scale(0.95);
+}
+.slider__item {
+  overflow: hidden;
+  display: flex;
+  padding: 20px;
+}
 .footer__content {
   padding: 20px 0;
   display: flex;
@@ -442,6 +492,15 @@ hr {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(12, 1fr);
   }
+  .team__content {
+    padding-top: 20px;
+  }
+  .page__team {
+    margin-bottom: 40px;
+  }
+  .page__clients {
+    margin-bottom: 50px;
+  }
 }
 @media (max-width: 700px) {
   .team__grid {
@@ -486,4 +545,7 @@ hr {
   .footer__nav > :not(:last-child) {
     margin-right: 20px;
   }
+}
+.disabled {
+  display: none;
 }
